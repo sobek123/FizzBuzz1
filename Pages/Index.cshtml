@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <form method="post">
+        <label asp-for="numbers.Number" class="text-center"></label>
+        <br /><input asp-for="numbers.Number" type="Number" /><br />
+        <button type="submit">Zatwierdź</button>
+        <b><span asp-validation-for="numbers.Number" class="text-danger"></span></b>
+       
+        <div class="row text-center">
+            <div class="col-12">
+                @{
+                    if (TempData.Peek("Message") != null)
+                    {
+                        <br/>
+                        <p>@TempData.Peek("Message")</p>
+                    }
+                }
+            </div>
+        </div>
+    </form>
+</div>
