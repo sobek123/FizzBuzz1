@@ -21,7 +21,7 @@ namespace FizzBuzz.Models
         [Column(TypeName = "datetime")]
         [NotMapped]
         public  string Date { get; set; }
-        [Column(TypeName ="varchar(60)"),MaxLength(60)]
+        [Column(TypeName ="varchar(60)")]
         public string Message { get; set; }
     }
 }

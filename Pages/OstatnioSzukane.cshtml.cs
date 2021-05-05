@@ -27,7 +27,7 @@ namespace FizzBuzz.Pages
         public void OnGet()
         {
             var NumberQuery = (from Address in _context.Address
-                               orderby Address.Date descending
+                              
                                select Address).Take(10);
             listOfNumbers = NumberQuery.ToList();
             
