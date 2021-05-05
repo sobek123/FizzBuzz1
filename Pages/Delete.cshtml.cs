@@ -6,16 +6,17 @@ using FizzBuzz.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using FizzBuzz.Models;
 
 namespace FizzBuzz.Pages
 {
     public class DeleteModel : PageModel
     {
-        public class Delete : PageModel
-        {
+       
+        
             private readonly FizzBuzz.Data.NumberContext _context;
 
-            public Delete(FizzBuzz.Data.NumberContext context)
+            public DeleteModel(FizzBuzz.Data.NumberContext context)
             {
                 _context = context;
             }
@@ -58,4 +59,4 @@ namespace FizzBuzz.Pages
             }
         }
     }
-}
+
