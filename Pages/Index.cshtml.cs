@@ -71,6 +71,10 @@ namespace FizzBuzz.Pages
                 listOfNumbers = checkingListOfNumbers();
                numbers.Message = messageCheck(numbers.Number);
                 numbers.Date = DateTime.Now.ToString();
+                if (User.Identity.IsAuthenticated)
+                {
+                    numbers.Iden = User.Identity.Name.ToString();
+                }
                listOfNumbers.Add(numbers);
                 _context.Address.Add(numbers);
                 _context.SaveChanges();

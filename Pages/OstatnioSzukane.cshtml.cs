@@ -10,10 +10,11 @@ using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using System.Linq.Dynamic;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace FizzBuzz.Pages
 {
+    [Authorize]
     public class OstatnioSzukaneModel : PageModel
     {
         private readonly NumberContext _context;
@@ -28,7 +29,7 @@ namespace FizzBuzz.Pages
         {
             var NumberQuery = (from Address in _context.Address
                               
-                               select Address).Take(10);
+                               select Address).Take(20);
             listOfNumbers = NumberQuery.ToList();
             
         }
