@@ -10,7 +10,7 @@ namespace FizzBuzz.Models
 {
     public class Address
     {
-        [Key]
+      
         public int Id { get; set; }
 
         [Display(Name = "Liczba:")]
@@ -21,7 +21,10 @@ namespace FizzBuzz.Models
         [Column(TypeName = "datetime")]
         [NotMapped]
         public  string Date { get; set; }
-        [Column(TypeName ="varchar(60)")]
+        [Column(TypeName ="varchar(60)"),MaxLength(60)]
         public string Message { get; set; }
+        [Column(TypeName = "nvarchar(60)")]
+
+        public string Iden { get; set; }
     }
 }

@@ -8,7 +8,14 @@
     @foreach (var item in Model.listOfNumbers)
     {
         <p>@Html.DisplayFor(modelItem => item.Number)</p><p>@Html.DisplayFor(modelItem => item.Message)</p><p>@Html.DisplayFor(modelItem => item.Date)</p>
-        <span><a asp-page="./Delete" asp-route-id="@item.Id">Delete</a></span>
-    }
+        @if (item.Iden == User.Identity.Name)
+        {
+            <span><a asp-page="./Delete" asp-route-id="@item.Id">Delete</a></span>
+        }
+        else
+        {
+            <p></p>
+        }
+     }
 }
 
